@@ -68,57 +68,6 @@
         });
     };
 
-
-   /* modal
-    * ---------------------------------------------------- */ 
-    const ssModal = function() {
-
-        const modal = document.querySelector(".modal");
-        const trigger = document.querySelector(".modal-trigger");
-        const closeButton = document.querySelector(".modal__close");
-
-        function toggleModal() {
-            modal.classList.toggle("show-modal");
-        }
-        function windowOnClick(event) {
-            if (event.target === modal) {
-                toggleModal();
-            }
-        }
-        function pressEsc(event) {
-            if (event.which=='27') {
-                modal.classList.remove("show-modal");
-            }
-        }
-
-        trigger.addEventListener("click", toggleModal);
-        closeButton.addEventListener("click", toggleModal);
-        window.addEventListener("click", windowOnClick);
-        window.addEventListener("keyup", pressEsc);
-
-    };
-
-
-   /* final countdown
-    * ------------------------------------------------------ */
-    const ssFinalCountdown = function() {
-
-        const finalDate = '2022/04/07';
-
-        $('.counter').countdown(finalDate)
-        .on('update.countdown finish.countdown', function(event) {
-
-            const str = '<div class=\"counter__time days\">%D&nbsp;<span>D</span></div>' +
-                        '<div class=\"counter__time hours\">%H&nbsp;<span>H</span></div>' +
-                        '<div class=\"counter__time minutes\">%M&nbsp;<span>M</span></div>' +
-                        '<div class=\"counter__time seconds\">%S&nbsp;<span>S</span></div>';
-                    
-            $(this).html(event.strftime(str));
-
-        });
-    };
-
-
    /* tabs
     * ---------------------------------------------------- */ 
     const ssTabs = function() {
@@ -232,8 +181,6 @@
         ssPreloader();
         ssPrettyPrint();
         ssSlickSlider();
-        ssModal();
-        ssFinalCountdown();
         ssTabs();
         ssAlertBoxes();
         ssSmoothScroll();
