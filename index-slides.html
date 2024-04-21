@@ -18,6 +18,65 @@
     <link rel="icon" type="image/png" sizes="16x16" href="favicon-16x16.png" alt="">
     <link rel="manifest" href="site.webmanifest">
 
+    <style>
+        /* Popup container - can be anything you want */
+        .popup {
+          position: relative;
+          display: inline-block;
+          cursor: pointer;
+          -webkit-user-select: none;
+          -moz-user-select: none;
+          -ms-user-select: none;
+          user-select: none;
+        }
+        
+        /* The actual popup */
+        .popup .popuptext {
+          visibility: hidden;
+          width: 160px;
+          background-color: #555;
+          color: #fff;
+          text-align: center;
+          border-radius: 6px;
+          padding: 8px 0;
+          position: absolute;
+          z-index: 1;
+          bottom: 125%;
+          left: 50%;
+          margin-left: -80px;
+        }
+        
+        /* Popup arrow */
+        .popup .popuptext::after {
+          content: "";
+          position: absolute;
+          top: 100%;
+          left: 50%;
+          margin-left: -5px;
+          border-width: 5px;
+          border-style: solid;
+          border-color: #555 transparent transparent transparent;
+        }
+        
+        /* Toggle this class - hide and show the popup */
+        .popup .show {
+          visibility: visible;
+          -webkit-animation: fadeIn 1s;
+          animation: fadeIn 1s;
+        }
+        
+        /* Add animation (fade in the popup) */
+        @-webkit-keyframes fadeIn {
+          from {opacity: 0;} 
+          to {opacity: 1;}
+        }
+        
+        @keyframes fadeIn {
+          from {opacity: 0;}
+          to {opacity:1 ;}
+        }
+</style>
+
 </head>
 <body id="top">
     <!-- preloader -->
@@ -248,9 +307,12 @@
                                 </div>
                             </div>
                         </div>  
-                        <div>
+                        <div class="popup">
                             </br>
-                            <a href="https://lidyalaw.github.io/qizhong.github.io/" class="btn btn--stroke h-full-width">What's More?</a> <!--link baru-->
+                            <a href="https://lidyalaw.github.io/qizhong.github.io/" class="btn btn--stroke h-full-width" onclick="myFunction()">What's More?</a> <!--link baru-->
+                            <span class="popuptext" id="myPopup">Yeyy!! What's this? It's a Gift! You got a Gift!
+                            For the time being of scrolling through this website, you got mystical blessing, you are mystically powered up, you got mystical boost on intelligence, and now 期中 is going to be eazy peazy, all you have to do is just worry less, do the best, believe you can! You are smart! Everything is going to be great! Good things are coming!
+                            </span>
                             </br>
                         </div>
                     </div> <!-- end 03. tab contact -->
@@ -275,6 +337,12 @@
         </div> <!-- end row -->
     </section> <!-- end s-info -->
     <!-- JS -->
+    <script>
+      function myFunction() {
+          var popup = document.getElementById("myPopup");
+          popup.classList.toggle("show");
+      }  
+    </script>
     <script src="js/jquery-3.2.1.min.js"></script>
     <script src="js/plugins.js"></script>
     <script src="js/main.js"></script>
